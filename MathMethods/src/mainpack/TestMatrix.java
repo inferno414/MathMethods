@@ -84,4 +84,12 @@ public class TestMatrix{
 		lum.Init();
 		assertTrue(lum.GetU().Equals(Bf));
 	}
+	public void testLU2() throws Exception{
+		float[][] Af = {{1,2,3},{4,5,6},{7,8,10}};
+		Matrix A = new Matrix(3);
+		A.Init(Af);
+		LUMatrix LU = new LUMatrix(A);
+		LU.Init();
+		assertTrue(LU.GetL().Mult(LU.GetU()).Equals(A));
+	}
 }
