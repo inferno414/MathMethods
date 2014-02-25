@@ -74,6 +74,7 @@ public class TestMatrix{
 		A.SwapColumns(0, 2);
 		assertTrue(A.Equals(Bf));
 	}
+	@Test 
 	public void testLU() throws Exception {
 		float[][] Af = {{1,2,3},{4,5,6},{7,8,10}};
 		float[][] Bf = {{1,2,3},{0,-3,-6},{0,0,1}};
@@ -83,6 +84,7 @@ public class TestMatrix{
 		lum.Init();
 		assertTrue(lum.GetU().Equals(Bf));
 	}
+	@Test 
 	public void testLU2() throws Exception{
 		float[][] Af = {{1,2,3},{4,5,6},{7,8,10}};
 		Matrix A = new Matrix(3);
@@ -90,5 +92,15 @@ public class TestMatrix{
 		LUMatrix LU = new LUMatrix(A);
 		LU.Init();
 		assertTrue(LU.GetL().Mult(LU.GetU()).Equals(A));
+	}
+	@Test 
+	public void testMultVect() throws Exception {
+		float[][] Af = {{1,2,3},{4,5,6},{7,8,10}};
+		float[] Bf = {10,11,12}, Cf = {68,167,278} ;
+		Matrix A = new Matrix(3);
+		Vector B = new Vector(3);
+		B.Init(Bf);
+		A.Init(Af);
+		assertTrue(A.Mult(B).Equal(Cf));
 	}
 }

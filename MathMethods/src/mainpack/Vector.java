@@ -26,4 +26,12 @@ public class Vector {
 		}
 		System.out.println();
 	}
+	public boolean Equal(float [] other){
+		for (int i = 0; i< size; i++){
+			if(other[i] != V[i]){
+				return false;
+			}
+		}
+		return true;
+	}
 }

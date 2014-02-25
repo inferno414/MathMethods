@@ -129,7 +129,7 @@ public class Matrix {
 		}
 		Vector res = new Vector(size);
 		for(int i= 0; i< size; i++){
-			for(int j = 0;j < 0; j++){
+			for(int j = 0; j < size; j++){
 				res.V[i] += M[i][j]*vect.V[j];
 			}
 		}
