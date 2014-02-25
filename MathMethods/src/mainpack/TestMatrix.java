@@ -72,7 +72,6 @@ public class TestMatrix{
 		float[][] Bf = {{3,2,1},{6,5,4},{9,8,7}};
 		A.Init(Af);
 		A.SwapColumns(0, 2);
-		//A.Print();
 		assertTrue(A.Equals(Bf));
 	}
 	public void testLU() throws Exception {

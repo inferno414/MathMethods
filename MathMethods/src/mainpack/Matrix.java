@@ -1,8 +1,8 @@
 package mainpack;
 
 public class Matrix {
-	public float[][] M;
-	public int size;
+	float[][] M;
+	int size;
 	
 	public Matrix(int Size){
 		size = Size;
@@ -122,5 +122,17 @@ public class Matrix {
 			M[i][c1] = M[i][c2];
 			M[i][c2] = tmp;
 		}
+	}
+	public Vector Mult(Vector vect) throws Exception{
+		if (vect.size != size){
+			throw new Exception("Wrong size");
+		}
+		Vector res = new Vector(size);
+		for(int i= 0; i< size; i++){
+			for(int j = 0;j < 0; j++){
+				res.V[i] += M[i][j]*vect.V[j];
+			}
+		}
+		return res;
 	}
 }
